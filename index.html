@@ -28,6 +28,31 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
+		.navs {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .def-nav {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .def-nav:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        /* 当前页面高亮 */
+        .def-nav.on {
+            background: #1abc9c;
+            color: #fff;
+        }
         
         header {
             background-color: var(--primary-color);
@@ -129,6 +154,16 @@
     </style>
 </head>
 <body>
+	<div class="top-main clearfix">
+    <div class="frame">
+        <div class="navs">
+            <a href="/" class="def-nav">主页</a>
+            <a href="/tian_blog/" class="def-nav">博客</a>
+			<a href="/tian_blog/post/guan-yu-wo.html" class="def-nav">关于我</a>
+			<a href="/love/" class="def-nav">友情链接</a>
+        </div>
+    </div>
+</div>
     <header>
         <div class="container">
             <h1>空中梯田gugugu</h1>
