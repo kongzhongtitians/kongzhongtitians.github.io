@@ -28,6 +28,89 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        /* ========== 绿色顶栏样式 ========== */
+        .top-main {
+            background: linear-gradient(135deg, var(--nav-bg-start) 0%, var(--nav-bg-end) 100%);
+            border-bottom: 3px solid #4caf50;
+            box-shadow: 0 2px 12px rgba(46, 125, 50, 0.35);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 10px 0;
+        }
+
+        .top-main .frame {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .def-nav {
+            color: #e8f5e9;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+            display: inline-block;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .def-nav:hover {
+            background: var(--nav-hover);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .def-nav:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 当前页面高亮 */
+        .def-nav.on {
+            background: var(--nav-active);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(76, 175, 80, 0.5);
+            font-weight: 600;
+        }
+
+        .def-nav.on::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 2px;
+            opacity: 0.9;
+        }
+
+        /* 绿色顶栏响应式 */
+        @media (max-width: 600px) {
+            .def-nav {
+                padding: 8px 14px;
+                font-size: 13px;
+                border-radius: 18px;
+            }
+            .navs {
+                gap: 4px;
+                justify-content: center;
+            }
+        }
         
         header {
             background-color: var(--primary-color);
